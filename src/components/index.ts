@@ -6,5 +6,5 @@ import KanbanColumnSkeleton from "./skeleton/kanban";
 import LatestActivitiesSkeleton from "./skeleton/latest-activities";
 import ProjectCardSkeleton from "./skeleton/project-card";
 import DashboardTotalCountCard from "./Home/totoal-count-card";
-
-export { UpcomingEvents, DealsChart, UpcomingEventsSkeleton, AccordionHeaderSkeleton, KanbanColumnSkeleton, LatestActivitiesSkeleton, ProjectCardSkeleton, DashboardTotalCountCard};
+import LatestActivities from "./Home/latest-activities";
+export { UpcomingEvents, DealsChart, UpcomingEventsSkeleton, AccordionHeaderSkeleton, KanbanColumnSkeleton, LatestActivitiesSkeleton, ProjectCardSkeleton, DashboardTotalCountCard, LatestActivities};

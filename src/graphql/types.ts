@@ -1,3 +1,4 @@
+import { DealsChart } from "@/components";
 import type * as Types from "./schema.types";
 
 export type UpdateUserMutationVariables = Types.Exact<{
