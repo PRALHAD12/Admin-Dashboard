@@ -73,8 +73,8 @@ const LatestActivities = () => {
                         <CustomAvatar
                           shape="square"
                           size={48}
-                          src={deal?.comapny.avatarUrl}
-                          name={deal?.comapny.Name}
+                          src={deal?.company.avatarUrl}
+                          name={deal?.company.Name}
                         />
                       }
                       description={
