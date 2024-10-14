@@ -14,7 +14,7 @@ import { AuthPage,ErrorComponent
 import "@refinedev/antd/dist/reset.css";
 
 import { authProvider, dataProvider, liveProvider } from './providers';
-import { Home, ForgotPassword, Login, Register } from './pages'
+import { Home, ForgotPassword, Login, Register, CompantList } from './pages'
 import { App as AntdApp } from "antd"
 import { BrowserRouter, Route, Routes, Outlet } from "react-router-dom";
 import routerBindings, { NavigateToResource, CatchAllNavigate, UnsavedChangesNotifier, DocumentTitleHandler } from "@refinedev/react-router-v6";
@@ -74,6 +74,7 @@ function App() {
                   }
                 >
                   <Route index element={<Home />} />
+                  <Route path='/companies' element={<CompantList />}/>
                 </Route>
                 </Routes >
                 <RefineKbar />
