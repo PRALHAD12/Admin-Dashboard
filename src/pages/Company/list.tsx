@@ -9,12 +9,36 @@ import { getDefaultFilter, useGo } from '@refinedev/core'
 import { Input, Space, Table } from 'antd';
 
 
-export const CompantList = () => {
+export const CompanyList = ({ children }:React.PropsWithChildren) => {
   const go =useGo();
   const { tableProps, filters } = useTable({
     resource: 'company',
+    onSearch: (values) => {
+      return [
+        {
+          field: 'name',
+          operator: 'contains',
+          values: 'values.name'
+        }
+      ]
+    },
     pagination: {
       pageSize: 12,
+    },
+    sorters:{
+      initial: [{
+        field: 'createdAt',
+        order: 'desc'
+      }]
+    },
+    filters: {
+      initial: [
+        {
+          field: 'name',
+          operator: 'contains',
+          value: 'undefined'
+        }
+      ]
     },
     meta: {
       gqlQuery: COMPANIES_LIST_QUERY
@@ -22,6 +46,7 @@ export const CompantList = () => {
   })
 
   return (
+    <div> 
     <List
       breadcrumb={false}
       headerButtons={() => (
@@ -90,5 +115,7 @@ export const CompantList = () => {
         />
       </Table>
     </List>
-  );
+  { children } 
+  </div> 
+);
 }
