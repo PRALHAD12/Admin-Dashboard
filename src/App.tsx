@@ -21,6 +21,8 @@ import routerBindings, { NavigateToResource, CatchAllNavigate, UnsavedChangesNot
 import Layout from './components/layout';
 import { resources } from './config/resources';
 import Create from './pages/Company/create';
+import Edit from './pages/Company/edit';
+
 
 // import { Login } from "./pages/login";
 // import { Register } from "./pages/register";
@@ -61,26 +63,27 @@ function App() {
                   <Route path="/login" element={<Login />} />
                   <Route path="/forgot-password" element={<ForgotPassword />} />
                 </Routes>
-          <Routes> 
-                <Route
-                  element={
-                    <Authenticated
-                      key="authenticated-layout"
-                      fallback={<CatchAllNavigate to="/login" />}
-                    >
-                      <Layout>
-                        <Outlet />
-                      </Layout>
-                    </Authenticated>
-                  }
-                >
-                  <Route index element={<Home />} />
-                  <Route path='/companies'>
-                  <Route index element= {<CompanyList />}/>
-                  <Route path='new' element={<Create />} />
+                <Routes>
+                  <Route
+                    element={
+                      <Authenticated
+                        key="authenticated-layout"
+                        fallback={<CatchAllNavigate to="/login" />}
+                      >
+                        <Layout>
+                          <Outlet />
+                        </Layout>
+                      </Authenticated>
+                    }
+                  >
+                    <Route index element={<Home />} />
+                    <Route path="/companies">
+                      <Route index element={<CompanyList />} />
+                      <Route path="new" element={<Create />} />
+                      <Route path="edit/:id" element={<Edit />} />
+                    </Route>
                   </Route>
-                </Route>
-                </Routes >
+                </Routes>
                 <RefineKbar />
                 <UnsavedChangesNotifier />
                 <DocumentTitleHandler />
