@@ -8,3 +8,15 @@ import ProjectCardSkeleton from "./skeleton/project-card";
 import DashboardTotalCountCard from "./Home/totoal-count-card";
 import LatestActivities from "./Home/latest-activities";
 export { UpcomingEvents, DealsChart, UpcomingEventsSkeleton, AccordionHeaderSkeleton, KanbanColumnSkeleton, LatestActivitiesSkeleton, ProjectCardSkeleton, DashboardTotalCountCard, LatestActivities};
+
+
+
+export * from './tags/user-tag';
+export * from './text';
+export * from './accordion';
+export * from "./tasks/form/description";
+export * from "./tasks/form/due-date";
+export * from "./tasks/form/stage";
+export * from "./tasks/form/title";
+export * from "./tasks/form/users";
+export * from "./tasks/form/header";
